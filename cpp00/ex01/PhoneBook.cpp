@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:09:42 by kevlim            #+#    #+#             */
-/*   Updated: 2026/05/27 15:59:20 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/05/28 15:42:14 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,11 @@ void	PhoneBook::add_contact()
 	if (this->current_numb == 8)
 		this->current_numb = 0;
 	system("clear");
-	std::cout << "Type firstname : ";
-	std::getline(std::cin, f_name);
-
-	std::cout << "Type lastname : ";
-	std::getline(std::cin, l_name);
-
-	std::cout << "Type nickname : ";
-	std::getline(std::cin, n_name);
-
-	std::cout << "Type phone : ";
-	std::getline(std::cin, phone);
-
-	std::cout << "Type secret : ";
-	std::getline(std::cin, secret);
+	get_secure_input(f_name, "Type firstname : ");
+	get_secure_input(l_name, "Type lastname : ");
+	get_secure_input(n_name, "Type nickname : ");
+	get_secure_input(phone, "Type phone : ");
+	get_secure_input(secret, "Type secret : ");
 
 	system("clear");
 	this->array[this->current_numb].setFname(f_name);
@@ -70,7 +61,7 @@ void	PhoneBook::search_contact()
 	int	index;
 
 	system("clear");
-	if (this->current_numb == 0)
+	if (this->nb_contacts == 0)
 	{
 		std::cout << "No contact available !" << std::endl;
 		sleep(1);
@@ -99,8 +90,8 @@ void	PhoneBook::search_contact()
 		std::cout << std::setw(10) << n_name << std::endl;
 		i++;
 	}
-	std::cout << std::endl << "Type index : ";
-	std::getline(std::cin, ret);
+
+	get_secure_input(ret, "\nType index : ");
 	index = atoi(ret.c_str());
 	if ((index == 0 && ret[0] != '0')
 		|| (index > 7 || index < 0))
@@ -120,7 +111,8 @@ void	PhoneBook::search_contact()
 	std::cout << "Nickname : " << this->array[index].getNname() << std::endl;
 	std::cout << "Phone : " << this->array[index].getPhone() << std::endl;
 	std::cout << "Secret : " << this->array[index].getSecret() << std::endl;
-	std::cout << std::endl << "Press key to continue" << std::endl;
-	getchar();
-	getchar();
+	std::cout << std::endl << "Press ENTER to continue" << std::endl;
+
+	str	stash;
+	std::getline(std::cin, stash);
 }

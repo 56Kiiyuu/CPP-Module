@@ -6,13 +6,13 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 14:14:31 by kevlim            #+#    #+#             */
-/*   Updated: 2026/05/28 15:45:07 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:06:44 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-bool	is_printable(const str &s)
+bool	is_printable(const std::string &s)
 {
 	if (s.empty())
 		return false;
@@ -24,7 +24,7 @@ bool	is_printable(const str &s)
 	return true;
 }
 
-bool get_secure_input(str &output, const str &prompt)
+bool get_secure_input(std::string &output, const std::string &prompt)
 {
 	while (true)
 	{
@@ -43,10 +43,10 @@ bool get_secure_input(str &output, const str &prompt)
 int	main()
 {
 	PhoneBook	PhoneBook;
-	str	line = "";
-	str	add = "ADD";
-	str	search = "SEARCH";
-	str	exit = "EXIT";
+	std::string	line = "";
+	std::string	add = "ADD";
+	std::string	search = "SEARCH";
+	std::string	exit = "EXIT";
 
 	system("clear");
 	std::cout << "Welcome to PhoneBook" << std::endl;

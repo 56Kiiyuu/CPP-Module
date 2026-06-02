@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 14:36:13 by kevlim            #+#    #+#             */
-/*   Updated: 2026/05/27 15:26:22 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:05:38 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,52 +20,52 @@ Contact::~Contact()
 {
 }
 
-void	Contact::setFname(str f_name)
+void	Contact::setFname(std::string f_name)
 {
 	this->f_name = f_name;
 }
 
-void	Contact::setLname(str l_name)
+void	Contact::setLname(std::string l_name)
 {
 	this->l_name = l_name;
 }
 
-void	Contact::setNname(str n_name)
+void	Contact::setNname(std::string n_name)
 {
 	this->n_name = n_name;
 }
 
-void	Contact::setPhone(str phone)
+void	Contact::setPhone(std::string phone)
 {
 	this->phone = phone;
 }
 
-void	Contact::setSecret(str secret)
+void	Contact::setSecret(std::string secret)
 {
 	this->secret = secret;
 }
 
-str	Contact::getFname()
+std::string	Contact::getFname()
 {
 	return (this->f_name);
 }
 
-str	Contact::getLname()
+std::string	Contact::getLname()
 {
 	return (this->l_name);
 }
 
-str	Contact::getNname()
+std::string	Contact::getNname()
 {
 	return (this->n_name);
 }
 
-str	Contact::getPhone()
+std::string	Contact::getPhone()
 {
 	return (this->phone);
 }
 
-str	Contact::getSecret()
+std::string	Contact::getSecret()
 {
 	return (this->secret);
 }

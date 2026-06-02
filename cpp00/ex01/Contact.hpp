@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 14:36:39 by kevlim            #+#    #+#             */
-/*   Updated: 2026/05/27 15:26:27 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:06:26 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@
 class Contact
 {
 	private:
-		str	f_name;
-		str	l_name;
-		str	n_name;
-		str	phone;
-		str	secret;
+		std::string	f_name;
+		std::string	l_name;
+		std::string	n_name;
+		std::string	phone;
+		std::string	secret;
 
 	public:
 		Contact();
 		~Contact();
-		void	setFname(str f_name);
-		void	setLname(str l_name);
-		void	setNname(str nan_nameme);
-		void	setPhone(str phone);
-		void	setSecret(str secret);
-		str		getFname();
-		str		getLname();
-		str		getNname();
-		str		getPhone();
-		str		getSecret();
+		void	setFname(std::string f_name);
+		void	setLname(std::string l_name);
+		void	setNname(std::string nan_nameme);
+		void	setPhone(std::string phone);
+		void	setSecret(std::string secret);
+		std::string		getFname();
+		std::string		getLname();
+		std::string		getNname();
+		std::string		getPhone();
+		std::string		getSecret();
 };
 
 #endif

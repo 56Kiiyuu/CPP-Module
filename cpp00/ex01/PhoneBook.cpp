@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:09:42 by kevlim            #+#    #+#             */
-/*   Updated: 2026/05/28 15:42:14 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:07:14 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::add_contact()
 {
-	str	f_name = "";
-	str	l_name = "";
-	str	n_name = "";
-	str	phone = "";
-	str	secret = "";
+	std::string	f_name = "";
+	std::string	l_name = "";
+	std::string	n_name = "";
+	std::string	phone = "";
+	std::string	secret = "";
 
 	system("clear");
 	if (this->current_numb == 8)
@@ -52,12 +52,12 @@ void	PhoneBook::add_contact()
 void	PhoneBook::search_contact()
 {
 	int	i = 0;
-	str	f_name = "";
-	str	l_name = "";
-	str	n_name = "";
-	str	phone = "";
-	str	secret = "";
-	str	ret;
+	std::string	f_name = "";
+	std::string	l_name = "";
+	std::string	n_name = "";
+	std::string	phone = "";
+	std::string	secret = "";
+	std::string	ret;
 	int	index;
 
 	system("clear");
@@ -113,6 +113,6 @@ void	PhoneBook::search_contact()
 	std::cout << "Secret : " << this->array[index].getSecret() << std::endl;
 	std::cout << std::endl << "Press ENTER to continue" << std::endl;
 
-	str	stash;
+	std::string	stash;
 	std::getline(std::cin, stash);
 }

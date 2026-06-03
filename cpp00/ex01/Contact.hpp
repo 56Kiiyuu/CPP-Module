@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 14:36:39 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/02 14:06:26 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/03 16:05:53 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class Contact
 {
 	private:
-		std::string	f_name;
-		std::string	l_name;
-		std::string	n_name;
-		std::string	phone;
-		std::string	secret;
+		std::string	_f_name;
+		std::string	_l_name;
+		std::string	_n_name;
+		std::string	_phone;
+		std::string	_secret;
 
 	public:
 		Contact();

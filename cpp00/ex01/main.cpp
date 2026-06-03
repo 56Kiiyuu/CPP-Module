@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 14:14:31 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/02 14:06:44 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/03 16:13:52 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool get_secure_input(std::string &output, const std::string &prompt)
 		if (!std::getline(std::cin, output))
 		{
 			std::cout << std::endl << "Bye ! (EOF)" << std::endl;
-			exit(0);
+			return false;
 		}
 		if (is_printable(output))
 			return true;
@@ -52,7 +52,8 @@ int	main()
 	std::cout << "Welcome to PhoneBook" << std::endl;
 	while (1)
 	{
-		get_secure_input(line, "ADD | SEARCH | EXIT : ");
+		if (get_secure_input(line, "ADD | SEARCH | EXIT : ") == false)
+			break;
 		if (!line.compare(add))
 			PhoneBook.add_contact();
 		else if (!line.compare(search))
@@ -61,6 +62,11 @@ int	main()
 		{
 			std::cout << "Bye !" << std::endl;
 			break;
+		}
+		else
+		{
+			std::cout << "Command not found!" << std::endl;
+			sleep(1);
 		}
 		system("clear");
 	}

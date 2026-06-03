@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 12:58:29 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/03 16:02:01 by kevlim           ###   ########.fr       */
+/*   Created: 2026/06/03 15:21:49 by kevlim            #+#    #+#             */
+/*   Updated: 2026/06/03 15:52:15 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
-void	Zombie::announce(void)
-{
-	std::cout << _name <<": BraiiiiiiinnnzzzZ..." << "\n";
-}
+#include "Weapon.hpp"
 
-Zombie::Zombie(const std::string &in_name)
+class HumanB
 {
-	_name = in_name;
-}
+	private:
+		std::string	_name;
+		Weapon	*_weapon;
+	public:
+		HumanB(std::string name);
+		~HumanB();
+		void	setWeapon(Weapon &weapon);
+		void	attack(void);
+};
 
-Zombie::~Zombie()
-{
-	std::cout << _name << " (DESCONSTRUCTOR)\n";
-}
+#endif

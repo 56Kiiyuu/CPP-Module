@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:40:17 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/04 15:01:03 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/05 13:04:16 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(const Fixed &src);
-		Fixed &operator=(const Fixed &rhs);
+		Fixed	&operator=(const Fixed &rhs);
 		~Fixed();
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);

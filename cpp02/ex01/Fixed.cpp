@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:40:13 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/04 15:20:54 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/05 12:08:36 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Fixed::Fixed(const Fixed &src) : _rawBits(src._rawBits)
 	*this = src;
 }
 
-Fixed &Fixed::operator=(const Fixed &rhs)
+Fixed	&Fixed::operator=(const Fixed &rhs)
 {
 	std::cout << "Copy assignment operator called\n";
 	if (this != &rhs)

@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/15 13:58:01 by kevlim            #+#    #+#             */
+/*   Updated: 2026/06/15 14:14:18 by kevlim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "RobotomyRequestForm.hpp"
+#include <cstdlib>
+
+RobotomyRequestForm::RobotomyRequestForm(const std::string target)
+	: AForm("Robotomy Request", 72, 45, target)
+{}
+
+void	RobotomyRequestForm::executeAction() const {
+	std::cout << "* BZZZZZZZZZZZZ... DRILL NOISES *" << std::endl;
+	if (std::rand() % 2 == 0) {
+		std::cout << this->getTarget() << " has been robotomized successfully!" << std::endl;
+	} else {
+		std::cout << "The robotomy on " << this->getTarget() << " failed." << std::endl;
+	}
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{}

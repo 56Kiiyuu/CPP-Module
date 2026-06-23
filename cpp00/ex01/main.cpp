@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 14:14:31 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/03 16:13:52 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:00:33 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,18 @@ bool get_secure_input(std::string &output, const std::string &prompt)
 int	main()
 {
 	PhoneBook	PhoneBook;
-	std::string	line = "";
-	std::string	add = "ADD";
-	std::string	search = "SEARCH";
-	std::string	exit = "EXIT";
+	std::string	line;
 
-	system("clear");
 	std::cout << "Welcome to PhoneBook" << std::endl;
 	while (1)
 	{
 		if (get_secure_input(line, "ADD | SEARCH | EXIT : ") == false)
 			break;
-		if (!line.compare(add))
+		if (!line.compare("ADD"))
 			PhoneBook.add_contact();
-		else if (!line.compare(search))
+		else if (!line.compare("SEARCH"))
 			PhoneBook.search_contact();
-		else if (!line.compare(exit))
+		else if (!line.compare("EXIT"))
 		{
 			std::cout << "Bye !" << std::endl;
 			break;
@@ -66,9 +62,7 @@ int	main()
 		else
 		{
 			std::cout << "Command not found!" << std::endl;
-			sleep(1);
 		}
-		system("clear");
 	}
 	return (0);
 }

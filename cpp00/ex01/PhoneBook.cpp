@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 15:09:42 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/03 16:16:41 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:18:33 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ void	PhoneBook::add_contact()
 	std::string	phone = "";
 	std::string	secret = "";
 
-	system("clear");
 	if (this->_current_numb == 8)
 		this->_current_numb = 0;
-	system("clear");
 	if (!get_secure_input(f_name, "Type firstname : ") ||
 		!get_secure_input(l_name, "Type lastname : ") ||
 		!get_secure_input(n_name, "Type nickname : ") ||
@@ -40,8 +38,6 @@ void	PhoneBook::add_contact()
 	{
 		return ;
 	}
-
-	system("clear");
 	this->_array[this->_current_numb].setFname(f_name);
 	this->_array[this->_current_numb].setLname(l_name);
 	this->_array[this->_current_numb].setNname(n_name);
@@ -55,33 +51,28 @@ void	PhoneBook::add_contact()
 void	PhoneBook::search_contact()
 {
 	int	i = 0;
-	std::string	f_name = "";
-	std::string	l_name = "";
-	std::string	n_name = "";
-	std::string	phone = "";
-	std::string	secret = "";
+	std::string	f_name;
+	std::string	l_name;
+	std::string	n_name;
+	std::string	phone;
+	std::string	secret;
 	std::string	ret;
-	int	index;
 
-	system("clear");
 	if (this->_nb_contacts == 0)
 	{
 		std::cout << "No contact available !" << std::endl;
-		sleep(1);
 		return;
 	}
-	std::cout << std::setw(5) << "Index" << "|";
+	std::cout << std::setw(10) << "Index" << "|";
 	std::cout << std::setw(10) << "Firstname" << "|";
 	std::cout << std::setw(10) << "Lastname" << "|";
 	std::cout << std::setw(10) << "Nickname" << std::endl;
 	while (i < _nb_contacts)
 	{
-		std::cout << std::setw(5) << i << "|";
+		std::cout << std::setw(10) << i << "|";
 		f_name = this->_array[i].getFname();
 		l_name = this->_array[i].getLname();
 		n_name = this->_array[i].getNname();
-		phone = this->_array[i].getPhone();
-		secret = this->_array[i].getSecret();
 		if (f_name.length() > 9)
 			f_name = f_name.substr(0, 9) + ".";
 		if (l_name.length() > 9)
@@ -96,18 +87,17 @@ void	PhoneBook::search_contact()
 
 	if (!get_secure_input(ret, "\nType index : "))
 		return ;
-	index = atoi(ret.c_str());
-	if ((index == 0 && ret[0] != '0')
-		|| (index > 7 || index < 0))
+
+	char	*endptr;
+	long	index = std::strtol(ret.c_str(), &endptr, 10);
+	if (endptr == ret.c_str() || *endptr != '\0')
 	{
 		std::cout << "Pls enter valid index !" << std::endl;
-		sleep(1);
 		return ;
 	}
-	if (index >= this->_nb_contacts)
+	if (index < 0 || index >= this->_nb_contacts)
 	{
 		std::cout << "No contact found !" << std::endl;
-		sleep(1);
 		return ;
 	}
 	std::cout << "Firstname : " << this->_array[index].getFname() << std::endl;
@@ -115,12 +105,4 @@ void	PhoneBook::search_contact()
 	std::cout << "Nickname : " << this->_array[index].getNname() << std::endl;
 	std::cout << "Phone : " << this->_array[index].getPhone() << std::endl;
 	std::cout << "Secret : " << this->_array[index].getSecret() << std::endl;
-	std::cout << std::endl << "Press ENTER to continue" << std::endl;
-
-	std::string	stash;
-	if (!std::getline(std::cin, stash))
-	{
-		std::cout << std::endl << "Bye ! (EOF)" << std::endl;
-		return ;
-	}
 }

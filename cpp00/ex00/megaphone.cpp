@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 14:14:19 by kevlim            #+#    #+#             */
-/*   Updated: 2026/05/28 15:28:26 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:05:44 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char **av)
 		{
 			for (int j = 0; av[i][j]; j++)
 				std::cout << (char)toupper(av[i][j]);
-			std::cout << " ";
 		}
 		std::cout << std::endl;
 	}

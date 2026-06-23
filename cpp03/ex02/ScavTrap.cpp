@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 14:18:54 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/09 14:27:08 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:03:59 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
-	std::cout << "ScavTrap Default constructor called\n";
+	std::cout << "ScavTrap Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -25,17 +25,17 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
-	std::cout << "ScavTrap Name constructor called for " << _name << "\n";
+	std::cout << "ScavTrap Name constructor called for " << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
-	std::cout << "ScavTrap Copy constructor called\n";
+	std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &rhs)
 {
-	std::cout << "ScavTrap Copy assignment operator called\n";
+	std::cout << "ScavTrap Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
@@ -48,22 +48,22 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &rhs)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Destructor called for " << this->_name << "\n";
+	std::cout << "ScavTrap Destructor called for " << this->_name << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_hitPoints == 0 || this->_energyPoints == 0)
 	{
-		std::cout << "ScavTrap " << this->_name << " is out of commission and can't attack!\n";
+		std::cout << "ScavTrap " << this->_name << " is out of commission and can't attack!" << std::endl;
 		return;
 	}
 	this->_energyPoints--;
 	std::cout << "ScavTrap " << this->_name << " massively attacks " << target
-				<< ", dealing " << this->_attackDamage << " points of damage!\n";
+				<< ", dealing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " <<  this->_name << " has entered Gate keeper mode\n";
+	std::cout << "ScavTrap " <<  this->_name << " has entered Gate keeper mode" << std::endl;
 }

@@ -1,12 +1,13 @@
 NAME = animal
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 CPP = c++
-SRCS = *.cpp
+SRCS = Animal.cpp Brain.cpp Cat.cpp Dog.cpp main.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CPPFLAGS) $(SRCS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

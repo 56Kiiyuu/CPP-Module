@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:36:03 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/10 13:36:55 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:14:12 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
-	std::cout << "WrongAnimal constructor called\n";
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
 	*this = src;
-	std::cout << "WrongAnimal copy constructor called\n";
+	std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
@@ -32,7 +32,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal destructor called\n";
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 std::string	WrongAnimal::getType(void) const
@@ -42,5 +42,5 @@ std::string	WrongAnimal::getType(void) const
 
 void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "* Generic WrongAnimal sound *\n";
+	std::cout << "* Generic WrongAnimal sound *" << std::endl;
 }

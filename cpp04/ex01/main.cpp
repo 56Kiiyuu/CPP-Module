@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:40:57 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/10 14:27:21 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:15:52 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main() {
 		{
 			Dog tmp = basic; // Call copy constructor
 		} // tmp delete here, but basic not
-		std::cout << "Basic and his brain alive\n";
+		std::cout << "Basic and his brain alive" << std::endl;
 	}
 
 	std::cout << "\nFREE TAB\n";

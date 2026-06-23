@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:31:36 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/10 14:13:34 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:15:18 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ Cat::Cat() : Animal()
 {
 	this->type = "Cat";
 	this->_brain = new Brain();
-	std::cout << "Cat constructor called\n";
+	std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &src) : Animal(src)
 {
-	std::cout << "Cat copy constructor called\n";
+	std::cout << "Cat copy constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this->_brain = *src._brain;
 }
 
 Cat &Cat::operator=(const Cat &rhs)
 {
-	std::cout << "Cat assignment operator called\n";
+	std::cout << "Cat assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
 		this->type = rhs.type;
@@ -43,10 +43,10 @@ Cat &Cat::operator=(const Cat &rhs)
 Cat::~Cat()
 {
 	delete this->_brain;
-	std::cout << "Cat destructor called\n";
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 void	Cat::makeSound(void) const
 {
-	std::cout << "Meow!\n";
+	std::cout << "Meow!" << std::endl;
 }

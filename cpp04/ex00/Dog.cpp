@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:27:15 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/10 13:29:56 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:13:50 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Dog::Dog() : Animal()
 {
-	std::cout << "Dog constructor called\n";
+	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &src) : Animal(src)
 {
 	*this = src;
-	std::cout << "Dog copy constructor called\n";
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &rhs)
@@ -32,10 +32,10 @@ Dog &Dog::operator=(const Dog &rhs)
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called\n";
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 void	Dog::makeSound(void) const
 {
-	std::cout << "Woof Woof !\n";
+	std::cout << "Woof Woof !" << std::endl;
 }

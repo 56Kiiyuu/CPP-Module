@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:27:15 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/10 15:03:04 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:17:10 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ Dog::Dog() : AAnimal()
 {
 	this->type = "Dog";
 	this->_brain = new Brain();
-	std::cout << "Dog constructor called\n";
+	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &src) : AAnimal(src)
 {
-	std::cout << "Dog copy constructor called\n";
+	std::cout << "Dog copy constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this->_brain = *src._brain;
 }
 
 Dog &Dog::operator=(const Dog &rhs)
 {
-	std::cout << "Dog assignment operator called\n";
+	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
 		this->type = rhs.type;
@@ -43,10 +43,10 @@ Dog &Dog::operator=(const Dog &rhs)
 Dog::~Dog()
 {
 	delete this->_brain;
-	std::cout << "Dog destructor called\n";
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 void	Dog::makeSound(void) const
 {
-	std::cout << "Woof Woof !\n";
+	std::cout << "Woof Woof !" << std::endl;
 }

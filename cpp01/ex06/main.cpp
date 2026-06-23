@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 18:20:08 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/03 19:01:22 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:46:20 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cout << "[ Probably complaining about insignificant problems ]\n";
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return 1;
 	}
 	Harl harl;
@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 		harl.complain("ERROR");
 		break;
 	default:
-		std::cout << "[ Probably complaining about insignificant problems ]\n";
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		break;
 	}
 	return 0;

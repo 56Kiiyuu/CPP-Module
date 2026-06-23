@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:04:30 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/03 15:55:31 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:36:37 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ HumanA::HumanA(std::string name, Weapon &weapon): _weapon(weapon)
 
 HumanA::~HumanA()
 {
-	std::cout << this->_name << " died. (DECONSTRUCTOR)\n";
+	std::cout << this->_name << " died. (DECONSTRUCTOR)" << std::endl;
 }
 
 void	HumanA::attack()
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << "\n";
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
 }

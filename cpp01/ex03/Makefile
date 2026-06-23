@@ -1,12 +1,13 @@
 NAME = violence
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 CPP = c++
-SRCS = *.cpp
+SRCS = HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CPPFLAGS) $(SRCS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 17:26:03 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/03 17:52:05 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:40:19 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 {
 	if (ac != 4)
 	{
-		std::cerr << "Error: ./sed <filename> <s1> <s2>\n";
+		std::cerr << "Error: ./sed <filename> <s1> <s2>" << std::endl;
 		return 1;
 	}
 	std::string	filename = av[1];
@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 	std::ifstream ifs(filename.c_str());
 	if (!ifs.is_open())
 	{
-		std::cerr << "Cannot open file: " << filename << "\n";
+		std::cerr << "Cannot open file: " << filename << std::endl;
 		return 1;
 	}
 
@@ -63,7 +63,7 @@ int	main(int ac, char **av)
 	std::ofstream ofs((filename + ".replace").c_str());
 	if (!ofs.is_open())
 	{
-		std::cerr << "Cannot create output file\n";
+		std::cerr << "Cannot create output file" << std::endl;
 		return 1;
 	}
 	ofs << new_content;

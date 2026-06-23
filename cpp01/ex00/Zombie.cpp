@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 12:58:29 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/03 16:02:01 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:31:13 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Zombie::announce(void)
 {
-	std::cout << _name <<": BraiiiiiiinnnzzzZ..." << "\n";
+	std::cout << _name <<": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::Zombie(const std::string &in_name)

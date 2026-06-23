@@ -29,7 +29,7 @@ class Contact
 		~Contact();
 		void	setFname(std::string f_name);
 		void	setLname(std::string l_name);
-		void	setNname(std::string nan_nameme);
+		void	setNname(std::string n_name);
 		void	setPhone(std::string phone);
 		void	setSecret(std::string secret);
 		std::string		getFname();

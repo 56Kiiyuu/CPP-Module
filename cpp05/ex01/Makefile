@@ -1,12 +1,13 @@
 NAME = form
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 CPP = c++
-SRCS = *.cpp
+SRCS = Bureaucrat.cpp Form.cpp main.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CPPFLAGS) $(SRCS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

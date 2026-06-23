@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 14:30:05 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/15 14:43:27 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:23:02 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ AForm* Intern::makeForm(const std::string formName, const std::string target) co
 	{
 		if (formName == formNames[i])
 		{
-			std::cout << "Intern creates " << formName << "\n";
+			std::cout << "Intern creates " << formName << std::endl;
 			return (this->*formCreators[i])(target);
 		}
 	}
-	std::cout << "Error: Intern cannot create '" << formName << "' because it doesn't exist.\n";
+	std::cout << "Error: Intern cannot create '" << formName << "' because it doesn't exist." << std::endl;
 	return NULL;
 }

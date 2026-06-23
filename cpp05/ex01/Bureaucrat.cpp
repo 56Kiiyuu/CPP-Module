@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/12 13:46:00 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/12 14:30:58 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 17:22:10 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,12 @@ void	Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << this->_name << " signed " << form.getName() << "\n";
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName()
-		<< " because " << e.what() << '\n';
+		<< " because " << e.what() << std::endl;
 	}
 
 }

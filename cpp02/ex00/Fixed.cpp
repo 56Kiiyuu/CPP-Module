@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:40:13 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/05 13:04:20 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/23 16:49:49 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Fixed::Fixed() : _rawBits(0)
 {
-	std::cout << "Default constructor called\n";
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &src) : _rawBits(src._rawBits)
 {
-	std::cout << "Copy constructor called\n";
+	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed	&Fixed::operator=(const Fixed &rhs)
 {
-	std::cout << "Copy assignment operator called\n";
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
 		this->_rawBits = rhs.getRawBits();
@@ -35,12 +35,12 @@ Fixed	&Fixed::operator=(const Fixed &rhs)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	std::cout << "Destructor called" << std::endl;
 }
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called\n";
+	std::cout << "getRawBits member function called" << std::endl;
 	return this->_rawBits;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:40:13 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/23 16:50:26 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/06/29 13:00:59 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed(const float f)
 	this->_rawBits = roundf(f * (1 << _bits));
 }
 
-Fixed::Fixed(const Fixed &src) : _rawBits(src._rawBits)
+Fixed::Fixed(const Fixed &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;

@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/12 13:59:49 by kevlim            #+#    #+#             */
-/*   Updated: 2026/06/15 14:45:17 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/07/17 14:13:52 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <ctime>
 
 
-
 int main() {
 	std::srand(std::time(NULL)); // INIT FOR ROBOTOMY
 
@@ -26,7 +25,7 @@ int main() {
 	Bureaucrat middle("Bob", 50);
 	Bureaucrat low("Intern", 140);
 
-	ShrubberyCreationForm shrub("garden");
+	ShrubberyCreationForm shrub("tree");
 	RobotomyRequestForm robot("Bender");
 	PresidentialPardonForm pardon("Arthur");
 
@@ -42,6 +41,10 @@ int main() {
 	middle.signAForm(robot); // OK (Bob 50, requires 72)
 	middle.executeForm(robot); // KO(Bob 50, requires 45)
 	boss.executeForm(robot); // OK (Launch)
+	//boss.executeForm(robot);
+	//boss.executeForm(robot);
+	//boss.executeForm(robot);
+	//boss.executeForm(robot);
 
 	std::cout << "\nPRESIDENTIAL PARDON\n";
 	boss.signAForm(pardon);

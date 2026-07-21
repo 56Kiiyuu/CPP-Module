@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 14:42:51 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/21 14:45:12 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/07/21 15:21:32 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 class Serializer
 {
-private:
-	Serializer();
-	Serializer(const Serializer &src);
-	Serializer &operator=(const Serializer &rhs);
-	~Serializer();
-public:
-	static uintptr_t	serialize(Data* ptr);
-	static Data*		deserialize(uintptr_t raw);
+	private:
+		Serializer();
+		Serializer(const Serializer &src);
+		Serializer &operator=(const Serializer &rhs);
+		~Serializer();
+	public:
+		static uintptr_t	serialize(Data* ptr);
+		static Data*		deserialize(uintptr_t raw);
 };
 
 #endif

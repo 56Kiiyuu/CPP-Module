@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/24 14:31:20 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/24 15:02:23 by kevlim           ###   ########.fr       */
+/*   Created: 2026/07/24 15:00:12 by kevlim            #+#    #+#             */
+/*   Updated: 2026/07/24 15:02:28 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 
-int main(int argc, char **argv) {
-	if (argc != 2) {
-		std::cerr << "Error: could not open file." << std::endl;
-		return 1;
-	}
-
-	BitcoinExchange btc;
-
-	if (!btc.loadDataBase("data.csv"))
+int	main(int argc, char **argv)
+{
+	if (argc != 2)
 	{
+		std::cerr << "Error" << std::endl;
 		return 1;
 	}
 
-	btc.processInputFile(argv[1]);
+	RPN rpn;
+	if (!rpn.evaluate(argv[1]))
+	{
+		std::cerr << "Error" << std::endl;
+		return 1;
+	}
 }

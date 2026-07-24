@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/24 14:42:26 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/24 16:08:33 by kevlim           ###   ########.fr       */
+/*   Created: 2026/07/24 17:23:49 by kevlim            #+#    #+#             */
+/*   Updated: 2026/07/24 17:26:15 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
-# define RPN_HPP
-# include <iostream>
-# include <stack>
-# include <string>
-# include <sstream>
-# include <cstdlib>
+#include "PmergeMe.hpp"
 
-class RPN
+int main(int argc, char **argv)
 {
-	private:
-		std::stack<int>	_stack;
-		bool	isOperator(char c) const;
-		bool	executeOperation(char op);
-	public:
-		RPN();
-		RPN(const RPN &src);
-		RPN &operator=(const RPN &rhs);
-		~RPN();
+	if (argc < 2)
+	{
+		std::cerr << "Error" << std::endl;
+		return 1;
+	}
 
-		bool	evaluate(const std::string &expression);
-};
+	PmergeMe pm;
+	if (!pm.parseInput(argc, argv))
+	{
+		std::cerr << "Error" << std::endl;
+		return 1;
+	}
 
-#endif
-
+	pm.execute();
+}

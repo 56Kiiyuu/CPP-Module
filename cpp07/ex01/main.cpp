@@ -6,13 +6,14 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 14:07:50 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/22 14:12:56 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/07/28 15:14:55 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "iter.hpp"
+
 
 // Modify all elem (non const)
 template <typename T>
@@ -77,3 +78,38 @@ int main()
 
 	return 0;
 }
+/*
+class Awesome
+{
+  public:
+    Awesome( void ) : _n( 42 ) { return; }
+    int get( void ) const { return this->_n; }
+  private:
+    int _n;
+};
+
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
+{
+  o << rhs.get();
+  return o;
+}
+
+template< typename T >
+void print( T& x )
+{
+  std::cout << x << std::endl;
+  return;
+}
+
+int main() {
+  int tab[] = { 0, 1, 2, 3, 4 };
+  Awesome tab2[5];
+
+  const int len = 5;
+
+  iter( tab, len, print<const int> );
+  iter( tab2, len, print<Awesome> );
+
+  return 0;
+}
+*/

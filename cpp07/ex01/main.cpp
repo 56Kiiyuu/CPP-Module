@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 14:07:50 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/28 15:14:55 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/08/19 12:58:14 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@
 
 // Modify all elem (non const)
 template <typename T>
-void increment(T &x) {
+void increment(T &x)
+{
 	x += 1;
 }
 
 // Read (const)
 template <typename T>
-void printElement(const T &x) {
+void printElement(const T &x)
+{
 	std::cout << x << " ";
 }
 
 // Non Template
-void printUpperChar(char &c) {
+void printUpperChar(char &c)
+{
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;
 }

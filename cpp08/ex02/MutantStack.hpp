@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 16:07:29 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/22 16:24:16 by kevlim           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 # include <stack>
@@ -21,7 +9,7 @@ class MutantStack : public std::stack<T, Container>
 	public:
 		MutantStack() : std::stack<T, Container>() {}
 		MutantStack(const MutantStack &src) : std::stack<T, Container>(src) {}
-		virtual ~MutantStack() {}
+		~MutantStack() {}
 
 		MutantStack &operator=(const MutantStack &rhs)
 		{
@@ -36,43 +24,43 @@ class MutantStack : public std::stack<T, Container>
 		typedef typename Container::const_iterator			const_iterator;
 		typedef typename Container::reverse_iterator		reverse_iterator;
 		typedef typename Container::const_reverse_iterator	const_reverse_iterator;
-		
-		iterator begin() 
-		{
-			return this->c.begin();
-		}
-		
-		iterator end() 
-		{
-			return this->c.end();
-		}
-		
-		const_iterator begin() const 
+
+		iterator begin()
 		{
 			return this->c.begin();
 		}
 
-		const_iterator end() const 
+		iterator end()
 		{
 			return this->c.end();
 		}
 
-		reverse_iterator rbegin() 
+		const_iterator begin() const
+		{
+			return this->c.begin();
+		}
+
+		const_iterator end() const
+		{
+			return this->c.end();
+		}
+
+		reverse_iterator rbegin()
 		{
 			return this->c.rbegin();
 		}
-		
-		reverse_iterator rend() 
+
+		reverse_iterator rend()
 		{
 			return this->c.rend();
 		}
-		
-		const_reverse_iterator rbegin() const 
+
+		const_reverse_iterator rbegin() const
 		{
 			return this->c.rbegin();
 		}
-		
-		const_reverse_iterator rend() const 
+
+		const_reverse_iterator rend() const
 		{
 			return this->c.rend();
 		}

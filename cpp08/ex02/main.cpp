@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 16:24:37 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/22 16:35:12 by kevlim           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <list>
 #include "MutantStack.hpp"
@@ -41,7 +29,7 @@ int	main()
 		++it;
 		--it;
 		std::cout << "Elements in MutantStack:" << std::endl;
-		while (it != ite) 
+		while (it != ite)
 		{
 			std::cout << *it << std::endl;
 			++it;
@@ -73,10 +61,31 @@ int	main()
 		++it;
 		--it;
 		std::cout << "Elements in std::list:" << std::endl;
-		while (it != ite) 
+		while (it != ite)
 		{
 			std::cout << *it << std::endl;
 			++it;
 		}
+	}
+
+	std::cout << "\nTEST (std::string)" << std::endl;
+	{
+		MutantStack<std::string> sstack;
+		sstack.push("Kevin");
+		sstack.push("CPP");
+		sstack.push("Module 08");
+
+		// Test reverse_iterator
+		std::cout << "Reverse read:" << std::endl;
+		MutantStack<std::string>::reverse_iterator rit = sstack.rbegin();
+		MutantStack<std::string>::reverse_iterator rite = sstack.rend();
+		for (; rit != rite; ++rit)
+		{
+			std::cout << *rit << std::endl;
+		}
+
+		// Test copy assignment
+		MutantStack<std::string> copy_stack = sstack;
+		std::cout << "Copy size: " << copy_stack.size() << " (attending: 3)" << std::endl;
 	}
 }

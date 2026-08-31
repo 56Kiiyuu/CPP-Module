@@ -1,16 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Span.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 15:43:48 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/22 15:57:10 by kevlim           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Span.hpp"
+
+Span::Span() : _maxSize(0)
+{}
 
 Span::Span(unsigned int N) : _maxSize(N)
 {}
@@ -18,9 +9,9 @@ Span::Span(unsigned int N) : _maxSize(N)
 Span::Span(const Span &src) : _maxSize(src._maxSize), _numbers(src._numbers)
 {}
 
-Span &Span::operator=(const Span &rhs) 
+Span &Span::operator=(const Span &rhs)
 {
-	if (this != &rhs) 
+	if (this != &rhs)
 	{
 		this->_maxSize = rhs._maxSize;
 		this->_numbers = rhs._numbers;
@@ -28,7 +19,7 @@ Span &Span::operator=(const Span &rhs)
 	return *this;
 }
 
-Span::~Span() 
+Span::~Span()
 {}
 
 void	Span::addNumber(int number)

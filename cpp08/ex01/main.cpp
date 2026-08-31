@@ -1,21 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 16:00:16 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/22 16:02:04 by kevlim           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include "Span.hpp"
 
-int main() 
+int main()
 {
 	std::cout << "TEST" << std::endl;
 	{
@@ -33,15 +21,15 @@ int main()
 	std::cout << "\nTEST 20 000 ELEM (Range of Iterators)" << std::endl;
 	{
 		std::srand(std::time(NULL));
-		
+
 		std::vector<int> bigVector;
-		for (int i = 0; i < 20000; ++i) 
+		for (int i = 0; i < 20000; ++i)
 		{
 			bigVector.push_back(std::rand());
 		}
 
 		Span sp = Span(20000);
-		
+
 		// ADD Big vector
 		sp.addNumber(bigVector.begin(), bigVector.end());
 
@@ -54,22 +42,22 @@ int main()
 		Span sp = Span(1);
 		sp.addNumber(42);
 
-		try 
+		try
 		{
 			std::cout << "Trying to add a second element to Span(1)..." << std::endl;
 			sp.addNumber(21);
-		} 
-		catch (const std::exception &e) 
+		}
+		catch (const std::exception &e)
 		{
 			std::cerr << "Caught exception: " << e.what() << std::endl;
 		}
 
-		try 
+		try
 		{
 			std::cout << "Trying to compute span on single element..." << std::endl;
 			sp.shortestSpan();
-		} 
-		catch (const std::exception &e) 
+		}
+		catch (const std::exception &e)
 		{
 			std::cerr << "Caught exception: " << e.what() << std::endl;
 		}

@@ -8,11 +8,11 @@ int main()
 	std::cout << "TEST" << std::endl;
 	{
 		Span sp = Span(5);
-		sp.addNumber(6);
-		sp.addNumber(3);
+		sp.addNumber(-2147483648);
+		sp.addNumber(2147483647);
 		sp.addNumber(17);
 		sp.addNumber(9);
-		sp.addNumber(11);
+		sp.addNumber(10);
 
 		std::cout << "Shortest span: " << sp.shortestSpan() << std::endl; // Doit afficher 2
 		std::cout << "Longest span:  " << sp.longestSpan() << std::endl;  // Doit afficher 14

@@ -30,8 +30,8 @@ class Span
 			this->_numbers.insert(this->_numbers.end(), begin, end);
 		}
 
-		int	shortestSpan();
-		int	longestSpan();
+		unsigned int	shortestSpan();
+		unsigned int	longestSpan();
 
 		// Exceptions
 		class SpanFullException : public std::exception

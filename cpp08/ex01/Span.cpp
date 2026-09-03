@@ -57,7 +57,7 @@ unsigned int	Span::shortestSpan()
 	long long minSpan = static_cast<long long>(sorted[1]) - static_cast<long long>(sorted[0]);
 	for (size_t i = 1; i < sorted.size() - 1; ++i)
 	{
-		int diff = sorted[i + 1] - sorted[i];
+		long long diff = static_cast<long long>(sorted[i + 1]) - static_cast<long long>(sorted[i]);		if (diff < minSpan)
 		if (diff < minSpan)
 		{
 			minSpan = diff;

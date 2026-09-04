@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/24 14:47:40 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/24 14:59:57 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/09/04 13:24:24 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ bool	RPN::executeOperation(char op)
 
 bool	RPN::evaluate(const std::string &expression)
 {
+	// clean stack for sure
+	while (!this->_stack.empty())
+		this->_stack.pop();
+
 	for (size_t i = 0; i < expression.length(); ++i)
 	{
 		char c = expression[i];

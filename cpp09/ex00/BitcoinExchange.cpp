@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/24 13:58:37 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/24 14:38:49 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/09/04 13:12:16 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,38 @@ bool	BitcoinExchange::isValidDate(const std::string &date) const
 		if (day > (isLeap ? 29 : 28))
 			return false;
 	}
+	return true;
+}
+
+bool BitcoinExchange::isValidValue(const std::string &valStr, float &value) const
+{
+	if (valStr.empty())
+	{
+		std::cout << "Error: bad input => " << valStr << std::endl;
+		return false;
+	}
+
+	char *endptr;
+	double val = std::strtod(valStr.c_str(), &endptr);
+
+	// if invalid input after number
+	if (*endptr != '\0')
+	{
+		std::cout << "Error: bad input => " << valStr << std::endl;
+		return false;
+	}
+	if (val < 0)
+	{
+		std::cout << "Error: not a positive number." << std::endl;
+		return false;
+	}
+	if (val > 1000)
+	{
+		std::cout << "Error: too large a number." << std::endl;
+		return false;
+	}
+
+	value = static_cast<float>(val);
 	return true;
 }
 
@@ -124,24 +156,9 @@ void BitcoinExchange::processInputFile(const std::string &inputPath) const
 			continue;
 		}
 
-		char *endptr;
-		double val = std::strtod(valStr.c_str(), &endptr);
-
-		if (*endptr != '\0' && *endptr != ' ')
-		{
-			std::cout << "Error: bad input => " << line << std::endl;
+		float	val;
+		if (!isValidValue(valStr, val))
 			continue;
-		}
-		if (val < 0)
-		{
-			std::cout << "Error: not a positive number." << std::endl;
-			continue;
-		}
-		if (val > 1000)
-		{
-			std::cout << "Error: too large a number." << std::endl;
-			continue;
-		}
 
 		std::map<std::string, float>::const_iterator it = this->_db.find(date);
 

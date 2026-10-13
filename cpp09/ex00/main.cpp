@@ -6,14 +6,16 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/24 14:31:20 by kevlim            #+#    #+#             */
-/*   Updated: 2026/07/24 15:02:23 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/10/13 12:50:33 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int main(int argc, char **argv) {
-	if (argc != 2) {
+int main(int argc, char **argv)
+{
+	if (argc != 2)
+	{
 		std::cerr << "Error: could not open file." << std::endl;
 		return 1;
 	}

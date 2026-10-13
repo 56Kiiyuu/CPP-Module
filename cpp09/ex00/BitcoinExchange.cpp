@@ -6,7 +6,7 @@
 /*   By: kevlim <kevlim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/24 13:58:37 by kevlim            #+#    #+#             */
-/*   Updated: 2026/09/04 13:12:16 by kevlim           ###   ########.fr       */
+/*   Updated: 2026/10/13 12:49:41 by kevlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ void BitcoinExchange::processInputFile(const std::string &inputPath) const
 	}
 
 	std::string line;
-	std::getline(file, line); // skip first line
+	//std::getline(file, line); // skip first line 'date | value"
 
 	while (std::getline(file, line))
 	{
